@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        tools:context=".ViewRecordMain">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            tools:layout_editor_absoluteY="-2dp"
+            tools:layout_editor_absoluteX="0dp"
+            android:background="@drawable/textview_background"
+            tools:ignore="MissingConstraints" android:id="@+id/linearLayout">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Block"
+                  android:textSize="22dp"
+                  android:textColor="#000000"
+                  android:layout_marginRight="40dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintVertical_bias="0.078"
+                  app:layout_constraintHorizontal_bias="0.106"
+                  android:id="@+id/textView5"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Floor"
+                  android:textColor="#000000 "
+                  android:layout_marginRight="40dp"
+                  android:textSize="22dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintVertical_bias="0.078"
+                  app:layout_constraintHorizontal_bias="0.559"
+                  android:id="@+id/textView3"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Unit"
+                  android:textColor="#000000 "
+                  android:layout_marginRight="45dp"
+                  android:textSize="22dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintVertical_bias="0.078"
+                  app:layout_constraintHorizontal_bias="0.545" android:id="@+id/textView6"
+        />
+
+        <TextView
+                android:text="Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:layout_marginRight="30dp"
+                android:textSize="22dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/textView4" app:layout_constraintHorizontal_bias="0.827"
+                app:layout_constraintVertical_bias="0.078"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="411dp"
+            android:layout_height="43dp"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="@drawable/textview_background"
+            tools:layout_editor_absoluteX="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" android:id="@+id/linearLayout2">
+
+        <EditText android:layout_width="39dp"
+                  android:layout_height="24dp"
+                  android:hint="A"
+                  android:textColorHint="#808080"
+                  android:textColor="#000000"
+                  android:background="@null"
+                  android:id="@+id/blockInput_ViewRecord"
+                  android:singleLine="true"
+                  android:layout_marginRight="48dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintHorizontal_bias="0.115" app:layout_constraintVertical_bias="0.066"/>
+
+        <EditText android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:hint="01"
+                  android:textColorHint="#808080"
+                  android:textColor="#000000"
+                  android:background="@null"
+                  android:id="@+id/floorInput_ViewRecord"
+                  android:singleLine="true"
+                  android:layout_marginRight="42dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintHorizontal_bias="0.245" app:layout_constraintVertical_bias="0.082"/>
+
+        <EditText android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:hint="01"
+                  android:textColorHint="#808080"
+                  android:textColor="#000000"
+                  android:background="@null"
+                  android:id="@+id/unitInput_ViewRecord"
+                  android:singleLine="true"
+                  android:layout_marginRight="20dp"
+                  android:layout_marginLeft="20dp"
+
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintHorizontal_bias="0.544" app:layout_constraintVertical_bias="0.066"/>
+
+        <EditText android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:hint="2020.01.31"
+                  android:textColorHint="#808080"
+                  android:textColor="#000000"
+                  android:background="@null"
+                  android:id="@+id/dateInput_ViewRecord"
+                  android:singleLine="true"
+                  android:layout_marginRight="30dp"
+                  android:layout_marginLeft="5dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintHorizontal_bias="0.913" app:layout_constraintVertical_bias="0.066"/>
+
+    </LinearLayout>
+   <!-- <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.023"
+            app:layout_constraintHorizontal_bias="0.498"
+            android:id="@+id/OKBtn"/>-->
+
+
+    <ListView android:layout_width="358dp"
+              android:layout_height="621dp"
+              android:id="@+id/readings_ListView"
+              android:textColor="#ffff"
+              android:focusableInTouchMode="false"
+              android:isScrollContainer="false"
+              android:divider="#ffff"
+              android:dividerHeight="1px"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+    ></ListView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
