@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "427634773620",
+    "firebase_url": "https://fyp2-water-meter-reading.firebaseio.com",
+    "project_id": "fyp2-water-meter-reading",
+    "storage_bucket": "fyp2-water-meter-reading.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427634773620:android:e8bcdacaeaa6dc2e82cb21",
+        "android_client_info": {
+          "package_name": "com.mmu.fyp.xiang.watermetercamera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427634773620-3e1s7accuu3ire008mdbupn4v0d8dkil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzTKMon2830v55umPczjl7UJ8UUSXS8MU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427634773620-3e1s7accuu3ire008mdbupn4v0d8dkil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

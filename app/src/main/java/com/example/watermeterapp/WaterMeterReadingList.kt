@@ -1,6 +1,7 @@
 package com.example.watermeterapp
 
 import android.text.SpannableString
+import android.util.Log
 import android.widget.ArrayAdapter
 import java.io.File
 import java.io.InputStream
@@ -24,12 +25,14 @@ class WaterMeterReadingList{
     fun getWaterMeterReadingList(viewRecordMain: ViewRecordMain, block: String, floor: String, unit: String,date:String):ArrayAdapter<String> {
         var fileName = viewRecordMain.filesDir.absolutePath + "/UnitJson.json"
 
+
+        Log.d("123", "block: ${block} ${floor} ${unit} ${date}")
         val inputStream: InputStream = File(fileName).inputStream()
 
         // Read the text from buffferReader and store in String variable
         val inputString = inputStream.bufferedReader().use { it.readText() }
 
-        var regex = Regex("\"Block\":\"(?<testblock>"+block+")\",\"Floor\":("+floor+"),\"ID\":("+unit+"),\"Reading\":\"(\\S+)\",\"date\":\"("+date+")\",\"path\":\"(\\S+)\",\"time\":\"(\\S+)\"", RegexOption.MULTILINE)
+        var regex = Regex("\"Block\":\"("+block+")\",\"Floor\":("+floor+"),\"ID\":("+unit+"),\"Reading\":\"(\\S+)\",\"date\":\"("+date+")\",\"path\":\"(\\S+)\",\"time\":\"(\\S+)\"", RegexOption.MULTILINE)
         var result = regex.findAll(inputString).map{ result ->"Block:"+result.groups[1]?.value +"               Floor:"+ result.groups[2]?.value+"               ID:"+ result.groups[3]?.value+"\nReading:"+ result.groups[4]?.value+"          \nDate:"+ result.groups[5]?.value+"     Time:"+result.groups[7]?.value}.toList()
         var adapter = ArrayAdapter<String>(viewRecordMain, R.layout.listview_meterreadinglist_white, result)
 

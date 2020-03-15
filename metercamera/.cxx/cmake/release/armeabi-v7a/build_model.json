@@ -1,0 +1,81 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "D:\\JavaProjects\\WaterMeterApp",
+      "sdkFolder": "D:\\Android\\Sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [
+        "armeabi-v7a",
+        "x86_64",
+        "x86",
+        "arm64-v8a"
+      ],
+      "intermediatesFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\build\\intermediates",
+      "gradleModulePathName": ":metercamera",
+      "moduleRootFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera",
+      "makeFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\src\\main\\cpp\\CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "D:\\JavaProjects\\WaterMeterApp\\.cxx",
+      "cxxFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx",
+      "ndkFolder": "D:\\Android\\Sdk\\ndk\\20.1.5948944",
+      "ndkVersion": "20.1.5948944",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [
+      "-DOpenCV_DIR\u003dnative/jni",
+      "-DANDROID_ARM_NEON\u003dTRUE",
+      "-DANDROID_STL\u003dc++_shared"
+    ],
+    "cFlagList": [],
+    "cppFlagsList": [
+      "-std\u003dc++14 -frtti -fexceptions"
+    ],
+    "variantName": "release",
+    "soFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\build\\intermediates\\cmake\\release\\lib",
+    "objFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\build\\intermediates\\cmake\\release\\obj",
+    "jsonFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release",
+    "gradleBuildOutputFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release\\armeabi-v7a",
+  "jsonFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release\\armeabi-v7a\\android_gradle_build.json",
+  "gradleBuildOutputFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a",
+  "objFolder": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\build\\intermediates\\cmake\\release\\obj\\armeabi-v7a",
+  "buildCommandFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release\\armeabi-v7a\\build_command.txt",
+  "buildOutputFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release\\armeabi-v7a\\build_output.txt",
+  "modelOutputFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release\\armeabi-v7a\\build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a\\CMakeLists.txt",
+    "toolchainWrapperFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a\\android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a\\build_generation_state.json",
+    "cacheKeyFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_key.json",
+    "compilerCacheUseFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_use.json",
+    "compilerCacheWriteFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cxx\\release\\armeabi-v7a\\compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release\\armeabi-v7a\\json_generation_record.json",
+  "compileCommandsJsonFile": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\release\\armeabi-v7a\\compile_commands.json"
+}

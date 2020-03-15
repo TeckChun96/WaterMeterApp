@@ -1,0 +1,52 @@
+{
+  "stringTable": {
+    "0": "D:/JavaProjects/WaterMeterApp/metercamera/.cxx/cmake/debug/x86_64",
+    "1": "--target=x86_64-none-linux-android21 --gcc-toolchain=D:/Android/Sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/Sdk/ndk/20.1.5948944/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_libs_EXPORTS -ID:/JavaProjects/WaterMeterApp/metercamera/src/main/cpp/../../../native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -std=c++14 -frtti -fexceptions -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "D:\\Android\\Sdk\\ndk\\20.1.5948944\\build\\cmake\\platforms.cmake",
+    "D:\\Android\\Sdk\\ndk\\20.1.5948944\\build\\cmake\\android.toolchain.cmake",
+    "D:\\JavaProjects\\WaterMeterApp\\metercamera\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\debug\\x86_64\" clean"
+  ],
+  "buildTargetsCommand": "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-libs-Debug-x86_64": {
+      "buildCommand": "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\debug\\x86_64\" native-libs",
+      "buildType": "debug",
+      "toolchain": "2301385081",
+      "abi": "x86_64",
+      "artifactName": "native-libs",
+      "files": [
+        {
+          "src": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\src\\main\\cpp\\ImageAnalysis.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\src\\main\\cpp\\ImageAnalysisHelper.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\src\\main\\cpp\\image-analysis.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libnative-libs.so"
+    }
+  },
+  "toolchains": {
+    "2301385081": {
+      "cppCompilerExecutable": "D:\\Android\\Sdk\\ndk\\20.1.5948944\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

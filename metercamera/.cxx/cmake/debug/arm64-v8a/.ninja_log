@@ -1,0 +1,5 @@
+# ninja log v5
+14	12725	603675677	CMakeFiles/native-libs.dir/image-analysis.cpp.o	753b571c2c007a7e
+8	12872	603675677	CMakeFiles/native-libs.dir/ImageAnalysis.cpp.o	e4bc9fabc9653e17
+12	13126	603675677	CMakeFiles/native-libs.dir/ImageAnalysisHelper.cpp.o	6d45321bed966eac
+13126	13311	603675678	D:/JavaProjects/WaterMeterApp/metercamera/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-libs.so	66cccf5ae7fc735b

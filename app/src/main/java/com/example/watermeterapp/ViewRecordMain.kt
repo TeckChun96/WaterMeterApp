@@ -20,8 +20,7 @@ import android.content.ContentResolver
 import android.provider.MediaStore
 import android.content.ContentValues
 import android.graphics.Bitmap
-
-
+import android.util.Log
 
 
 class ViewRecordMain : AppCompatActivity() {

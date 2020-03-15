@@ -21,60 +21,124 @@ import java.net.URI
 import java.text.SimpleDateFormat
 import java.util.*
 import android.R.attr.path
+import android.util.Log
+import android.widget.ImageView
+import androidx.core.graphics.drawable.toBitmap
+import com.mmu.fyp.xiang.watermetercamera.`interface`.WaterMeterImageAnalyserListener
+import com.mmu.fyp.xiang.watermetercamera.utils.ImageFileIO
+import com.mmu.fyp.xiang.watermetercamera.utils.WaterMeterImageAnalyser
 
 
-
-
-
-
-class GetReadings : AppCompatActivity() {
+class GetReadings : AppCompatActivity(), WaterMeterImageAnalyserListener {
     private var stringBuilder: StringBuilder? = null
+
+    private lateinit var imagePaths: ArrayList<String>
+
+    private lateinit var imageView: ImageView
+
+    private val waterMeterImageAnalyser = WaterMeterImageAnalyser(this)
+
+    private lateinit var meterReadingEditText: EditText
+    private lateinit var unitEditText: EditText
+    private lateinit var blockEditText: EditText
+    private lateinit var floorEditText: EditText
+
+    private val imageFileIO = ImageFileIO(this)
+
+    private var doneAnalyse = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_readings)
 
-        var cursor: Cursor? = null
+        imageView = findViewById(R.id.image_view)
+        meterReadingEditText = findViewById(R.id.mReading_result)
+        blockEditText = findViewById(R.id.block_Result)
+        unitEditText = findViewById(R.id.unit_result)
+        floorEditText = findViewById(R.id.floor_Result)
 
-        val intent = intent
-        val imagePath = intent.getStringExtra("ImgPath")
-        val fileUri = Uri.parse(imagePath)
-        image_view.setImageURI(fileUri)
+        //init with 0
+        resetEditTexts()
 
-        val proj = arrayOf(MediaStore.Images.Media.DATA)
-        cursor = contentResolver.query(fileUri, proj, null, null, null)
-        val column_index = cursor?.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-        cursor?.moveToFirst()
-        val path= cursor?.getString(column_index!!)
+        imagePaths = intent.getSerializableExtra("imagePaths") as ArrayList<String>
 
-       /* var test = getContentResolver().openInputStream(fileUri)*/
-        //output=//media/external/images/media/2528
+        doneAnalyse = false
+        //begin analyse first
+        waterMeterImageAnalyser.analyseImage(imagePaths.first())
 
-/*
-        val encodedImage = encodeImage(selectedImage)
-*/
-        // Get the file Location and name where Json File are get stored
-        val fileName = filesDir.absolutePath + "/UnitJson.json"
+
+//        // Get the file Location and name where Json File are get stored
+
 
         button_confirm.setOnClickListener {
+            if(doneAnalyse)
+            {
+                val imagePath = imageFileIO.saveBitmap(imageView.drawable.toBitmap())
+                imageFileIO.sendImageToGallery()
+                val fileName = filesDir.absolutePath + "/UnitJson.json"
+                //call write Json method
+                writeJSONtoFile(fileName, "path"/*,encodedImage*/)
+                //Read the written Json File
+                //readJSONfromFile(fileName)
 
-            //call write Json method
-            writeJSONtoFile(fileName, path.toString()/*,encodedImage*/)
-            //Read the written Json File
-            //readJSONfromFile(fileName)
+                Toast.makeText(applicationContext, "Data Saved", Toast.LENGTH_LONG).show()
 
-            System.out.println("imagepath:=>"+path)
-            Toast.makeText(applicationContext, "Data Saved", Toast.LENGTH_LONG).show()
+                if(imagePaths.isEmpty())
+                {
+                    finish()
+                    //after saving will also navigate to other page
+//                    val intent2 = Intent(this, HomePage::class.java)
+//                    startActivity(intent2)
+                }
+                else
+                {
+                    waterMeterImageAnalyser.analyseImage(imagePaths.first())
+                }
+            }
 
-            //after saving will also navigate to other page
-            val intent2 = Intent(this, HomePage::class.java)
-            startActivity(intent2)
         }
 
     }
 
+    private fun resetEditTexts()
+    {
+        //init
+        meterReadingEditText.setText("00000")
+        blockEditText.setText("ST1")
+        unitEditText.setText("01")
+        floorEditText.setText("01")
+    }
 
-    private fun writeJSONtoFile(s: String,path: String/*,Image: String*/) {
+    override fun onWaterMeterImageAnalyseDone(
+        isValidWaterMeterImage: Boolean,
+        waterMeterBitmap: Bitmap?,
+        serialNo: String,
+        meterReading: String
+    ) {
+        if(!isValidWaterMeterImage)
+        {
+            Toast.makeText(applicationContext, "No meter detected from this image.", Toast.LENGTH_LONG).show()
+        }
+        Log.d("", "$serialNo $meterReading")
+        //remove first path from array
+        imagePaths.removeAt(0)
+
+        imageView.setImageBitmap(waterMeterBitmap)
+
+        meterReadingEditText.setText(meterReading)
+        val serialNoTexts = serialNo.split('-')
+        if(serialNoTexts.size == 3)
+        {
+            blockEditText.setText(serialNoTexts[0])
+            floorEditText.setText(serialNoTexts[1])
+            unitEditText.setText(serialNoTexts[2])
+        }
+
+        doneAnalyse = true
+    }
+
+
+    private fun writeJSONtoFile(s: String, imagePath: String/*,Image: String*/) {
         var bufferedWriter: BufferedWriter? = null
 
         //This is the save function in the result data page
@@ -102,7 +166,7 @@ class GetReadings : AppCompatActivity() {
         //Instead of hard-coding the values into Unit() //Unit refers to the Unit class
         //We replaced them with variables instead  //Initially it was Unit("hard-code value","hard-code value",tags)
         //So that it will store what the user typed in the app
-        var unit = Unit(unit_Result,block_Result,floor_Result, reading_Result,currentDate,path,currentTime/*,Image*/)
+        var unit = Unit(unit_Result, block_Result,floor_Result, reading_Result, currentDate, imagePath, currentTime/*,Image*/)
 
         //var buildingTest=Building(parameters)
 
@@ -112,7 +176,9 @@ class GetReadings : AppCompatActivity() {
         //Initialize the File Writer and write into file
         val file = File(s)
         //file.writeText(jsonString)
-
+        Log.d("TAG",
+            "$unit_Result $block_Result $floor_Result $reading_Result $currentDate $imagePath $currentTime"
+        )
 
         try {
 
@@ -129,14 +195,6 @@ class GetReadings : AppCompatActivity() {
             e.printStackTrace()
         }
 
-    }
-
-    private fun encodeImage(bm: Bitmap): String {
-        val baos = ByteArrayOutputStream()
-        bm.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-        val b = baos.toByteArray()
-
-        return Base64.encodeToString(b, Base64.DEFAULT)
     }
 
 

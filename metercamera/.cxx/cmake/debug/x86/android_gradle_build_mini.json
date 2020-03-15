@@ -1,0 +1,19 @@
+{
+  "buildFiles": [
+    "D:\\Android\\Sdk\\ndk\\20.1.5948944\\build\\cmake\\platforms.cmake",
+    "D:\\Android\\Sdk\\ndk\\20.1.5948944\\build\\cmake\\android.toolchain.cmake",
+    "D:\\JavaProjects\\WaterMeterApp\\metercamera\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\debug\\x86\" clean"
+  ],
+  "buildTargetsCommand": "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\debug\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-libs-Debug-x86": {
+      "artifactName": "native-libs",
+      "buildCommand": "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"D:\\JavaProjects\\WaterMeterApp\\metercamera\\.cxx\\cmake\\debug\\x86\" native-libs",
+      "abi": "x86",
+      "output": "D:\\JavaProjects\\WaterMeterApp\\metercamera\\build\\intermediates\\cmake\\debug\\obj\\x86\\libnative-libs.so"
+    }
+  }
+}

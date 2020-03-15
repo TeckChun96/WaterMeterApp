@@ -1,0 +1,3 @@
+D:/JavaProjects/WaterMeterApp/metercamera/.cxx/cmake/release/x86/CMakeFiles/rebuild_cache.dir
+D:/JavaProjects/WaterMeterApp/metercamera/.cxx/cmake/release/x86/CMakeFiles/native-libs.dir
+D:/JavaProjects/WaterMeterApp/metercamera/.cxx/cmake/release/x86/CMakeFiles/edit_cache.dir

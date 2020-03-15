@@ -1,0 +1,23 @@
+Executable : D:\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe
+arguments : 
+-HD:\JavaProjects\WaterMeterApp\metercamera\src\main\cpp
+-BD:\JavaProjects\WaterMeterApp\metercamera\.cxx\cmake\debug\x86_64
+-DANDROID_ABI=x86_64
+-DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\JavaProjects\WaterMeterApp\metercamera\build\intermediates\cmake\debug\obj\x86_64
+-DCMAKE_BUILD_TYPE=Debug
+-DANDROID_NDK=D:\Android\Sdk\ndk\20.1.5948944
+-DCMAKE_CXX_FLAGS=-std=c++14 -frtti -fexceptions
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_ANDROID_ARCH_ABI=x86_64
+-DCMAKE_SYSTEM_VERSION=21
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_ANDROID_NDK=D:\Android\Sdk\ndk\20.1.5948944
+-DCMAKE_TOOLCHAIN_FILE=D:\Android\Sdk\ndk\20.1.5948944\build\cmake\android.toolchain.cmake
+-G Ninja
+-DCMAKE_MAKE_PROGRAM=D:\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DOpenCV_DIR=native/jni
+-DANDROID_ARM_NEON=TRUE
+-DANDROID_STL=c++_shared
+jvmArgs : 
+
