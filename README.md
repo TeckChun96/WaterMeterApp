@@ -1,0 +1,1 @@
+Merged with project https://github.com/SouIBlood/MMU-FYP-Mobile-Vision-based-Water-Meter-Reading-System-Algorithms-Development , copy & replace the folder metercamera into this project in cases that project updated
